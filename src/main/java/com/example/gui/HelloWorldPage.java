@@ -28,11 +28,9 @@ public class HelloWorldPage extends DragomeVisualActivity {
     public void build() {
         final VisualLabel<String> label = new VisualLabelImpl<String>("message");
 
-        final VisualButton button = new VisualButtonImpl("button", new ClickListener() {
-            public void clickPerformed(VisualComponent aVisualComponent) {
-                label.setValue(helloWorldService.getGreetingsFor("World"));
-            }
-        });
+        final VisualButton button = new VisualButtonImpl("button",
+                aVisualComponent -> label.setValue(helloWorldService.getGreetingsFor("World!"))
+        );
 
         mainPanel.addChild(label);
         mainPanel.addChild(button);
