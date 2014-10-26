@@ -824,17 +824,27 @@ return this;
 },
 $build$void: function ()
 {
-var _0,label,_1,_2,button;
+var _0,label,_1,l20,_2,_3,_4,l21,button;
 	_0 = new com_dragome_model_VisualLabelImpl();
 	_0.$$init____java_lang_String$void("message");
 	label = _0;
 	_1 = new com_dragome_model_VisualButtonImpl();
-	_2 = new com_example_gui_HelloWorldPage$1();
-	_2.$$init____com_example_gui_HelloWorldPage__com_dragome_model_interfaces_VisualLabel$void(this, label);
-	_1.$$init____java_lang_String__com_dragome_model_listeners_ClickListener$void("button", _2);
+	_2 = "button";
+	_3 = this;
+	_4 = label;
+	l20 = dragomeJs.newArray('[Ljava.lang.Object;', [2]);
+	l21 = _4;
+	l20[1] = l21;
+	l21 = _3;
+	l20[0] = l21;
+	_1.$$init____java_lang_String__com_dragome_model_listeners_ClickListener$void(_2, com_dragome_utils_DragomeCallsiteFactory.$create___java_lang_String__java_lang_String__java_lang_String__java_lang_String__java_lang_String__java_lang_Object__java_lang_String$java_lang_Object("com/example/gui/HelloWorldPage", "clickPerformed", "com.dragome.model.listeners.ClickListener", "(Lcom/example/gui/HelloWorldPage;Lcom/dragome/model/interfaces/VisualLabel;)Lcom/dragome/model/listeners/ClickListener;", "com/example/gui/HelloWorldPage.lambda$build$0(Lcom/dragome/model/interfaces/VisualLabel;Lcom/dragome/model/interfaces/VisualComponent;)V (7)", l20, "static"));
 	button = _1;
 	this.$$$mainPanel.$addChild___com_dragome_model_interfaces_VisualComponent$com_dragome_model_interfaces_VisualPanel(label);
 	this.$$$mainPanel.$addChild___com_dragome_model_interfaces_VisualComponent$com_dragome_model_interfaces_VisualPanel(button);
+},
+$lambda$build$0___com_dragome_model_interfaces_VisualLabel__com_dragome_model_interfaces_VisualComponent$void: function (l1, aVisualComponent)
+{
+	l1.$setValue___java_lang_Object$void(this.$$$helloWorldService.$getGreetingsFor___java_lang_String$java_lang_String("World!"));
 }
 },
 statics:
@@ -101107,36 +101117,6 @@ var templateHandler,updatedTemplate,clone;
 	templateHandler.$makeVisible___com_dragome_templates_interfaces_Template$void(clone);
 	dragomeJs.checkCast(this.$$$templatesByItem.$get___java_lang_Object$java_lang_Object(item),java_util_List).$add___java_lang_Object$boolean(clone);
 	return clone;
-}
-},
-statics:
-{
-$$clinit_: function(){return this}
-
-}
-
-}
-
-);
-qx.Class.define("com_example_gui_HelloWorldPage$1", 
-{
-extend: java_lang_Object,
-construct: function(){},
-implement: [com_dragome_model_listeners_ClickListener],
-members:
-{
-$$$val$label : null,
-$$$this$0 : null,
-$$init____com_example_gui_HelloWorldPage__com_dragome_model_interfaces_VisualLabel$void: function (this$0, l2)
-{
-	this["$$$this$0"] = this$0;
-	this["$$$val$label"] = l2;
-	arguments.callee.self.superclass.prototype.$$init_$void.call(this);
-return this;
-},
-$clickPerformed___com_dragome_model_interfaces_VisualComponent$void: function (aVisualComponent)
-{
-	this["$$$val$label"].$setValue___java_lang_Object$void(this["$$$this$0"].$$$helloWorldService.$getGreetingsFor___java_lang_String$java_lang_String("World"));
 }
 },
 statics:
